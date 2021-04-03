@@ -5,6 +5,31 @@
 #include <math.h>
 #include <stddef.h>
 
+void AFFICHAGE_BOISSONS(int partieTP) {
+	if (partieTP == 1) {
+		printf("PARTIE A :\n");
+	} else if (partieTP == 2) {
+		printf("PARTIE B :\n");
+	} else if (partieTP == 3) {
+		printf("PARTIE C :\n");
+	} else if (partieTP == 4) {
+		printf("PARTIE D (Finale) :\n");
+	}
+	printf("╔══════════════════╦════╦═════╗\n");
+	printf("║Boisson           ║Prix║Choix║\n");
+	printf("╠══════════════════╬════╬═════╣\n");
+	printf("║Café court        ║0.70║  9  ║\n");
+	printf("║Café long         ║0.80║  8  ║\n");
+	printf("║Café au lait      ║0.60║  7  ║\n");
+	printf("║Chocolat          ║0.50║  6  ║\n");
+	printf("║Lait              ║0.50║  5  ║\n");
+	printf("║Thé au citron     ║0.60║  4  ║\n");
+	printf("║Thé à la menthe   ║0.90║  3  ║\n");
+	printf("║Thé au gingembre  ║1.20║  2  ║\n");
+	printf("║Thé au miel       ║1.40║  1  ║\n");
+	printf("║Zlatan tea        ║8.75║  0  ║\n");
+	printf("╚══════════════════╩════╩═════╝\n");
+}
 
 void WAIT(size_t secs) {
 	sleep(secs);
@@ -41,34 +66,17 @@ void LAUNCH_PROGRESS_BAR() {
 	}
 }
 
-void AFFICHAGE_BOISSONS() {
-	printf("╔══════════════════╦════╦═════╗\n");
-	printf("║Boisson           ║Prix║Choix║\n");
-	printf("╠══════════════════╬════╬═════╣\n");
-	printf("║Café court        ║0.70║  9  ║\n");
-	printf("║Café long         ║0.80║  8  ║\n");
-	printf("║Café au lait      ║0.60║  7  ║\n");
-	printf("║Chocolat          ║0.50║  6  ║\n");
-	printf("║Lait              ║0.50║  5  ║\n");
-	printf("║Thé au citron     ║0.60║  4  ║\n");
-	printf("║Thé à la menthe   ║0.90║  3  ║\n");
-	printf("║Thé au gingembre  ║1.20║  2  ║\n");
-	printf("║Thé au miel       ║1.40║  1  ║\n");
-	printf("║Zlatan tea        ║8.75║  0  ║\n");
-	printf("╚══════════════════╩════╩═════╝\n");
-}
-
 void ACHAT_BOISSON(double MONNAIE_DISPO[], double PRIX_BOISSONS[], int Choix, double Somme) {
 	int demande = 0;
 	while (Choix != 10) {
-		sleep(2);
 		int i = 0;
 		int j = 0;
 		double renduMonnaie;
 		double listNbPiece[10];
 		if (demande >= 1) {
+			sleep(3);
 			system("clear");
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(1);
 		}
 		printf("Quel est votre choix (tapez '10' pour quitter) ?\n");
 	    scanf("%d", &Choix);
@@ -95,6 +103,7 @@ void ACHAT_BOISSON(double MONNAIE_DISPO[], double PRIX_BOISSONS[], int Choix, do
 			LAUNCH_PROGRESS_BAR();
 			demande++;
 		    printf("Votre boisson est prête !!!\n");
+			printf("Patientez 3 secondes avant de recommander...\n");
 		} else {
 			if (Choix == 10) {
 				printf("A BIENTOT POUR DE NOUVEAUX ACHAT CLIENT FIDELE !!!\n");
@@ -109,14 +118,14 @@ void ACHAT_BOISSON(double MONNAIE_DISPO[], double PRIX_BOISSONS[], int Choix, do
 void ACHAT_BOISSON_2(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_BOISSONS[], int Choix, double Somme) {
 	int demande = 0;
 	while (Choix != 10) {
-		sleep(2);
 		int i = 0;
 		int j = 0;
 		double renduMonnaie;
 		int nbRendedMoney[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		if (demande >= 1) {
+			sleep(3);
 			system("clear");
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(2);
 		}
 		printf("Quel est votre choix (tapez '10' pour quitter) ?\n");
 	    scanf("%d", &Choix);
@@ -160,6 +169,7 @@ void ACHAT_BOISSON_2(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 			LAUNCH_PROGRESS_BAR();
 			demande++;
 		    printf("Votre boisson est prête !!!\n");
+			printf("Patientez 3 secondes avant de recommander...\n");
 		} else {
 			if (Choix == 10) {
 				printf("A BIENTOT POUR DE NOUVEAUX ACHAT CLIENT FIDELE !!!\n");
@@ -174,15 +184,15 @@ void ACHAT_BOISSON_2(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 void ACHAT_BOISSON_3(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_BOISSONS[], int Choix, double Somme) {
 	int demande = 0;
 	while (Choix != 10) {
-		sleep(2);
 		int i = 0;
 		int j = 0;
 		double renduMonnaie;
 		double monnaiePrefere;
 		int nbRendedMoney[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		if (demande >= 1) {
+			sleep(3);
 			system("clear");
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(3);
 		}
 		printf("Quel est votre choix (tapez '10' pour quitter) ?\n");
 	    scanf("%d", &Choix);
@@ -198,9 +208,9 @@ void ACHAT_BOISSON_3(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 			}
 	        printf("La monnaie à rendre est de : %.2lf\n", renduMonnaie);
 			while (i < 10) {
-				while (renduMonnaie > MONNAIE_DISPO[i] || fabs(renduMonnaie - MONNAIE_DISPO[i]) < 0.001) {
+				while (renduMonnaie > MONNAIE_DISPO[i] && MONNAIE_DISPO[i] <= monnaiePrefere || fabs(renduMonnaie - MONNAIE_DISPO[i]) < 0.001 && MONNAIE_DISPO[i] <= monnaiePrefere) {
 					if (NB_PIECES_DISPO[i] > 0) {
-					    renduMonnaie = renduMonnaie - MONNAIE_DISPO[i];
+						renduMonnaie = renduMonnaie - MONNAIE_DISPO[i];
 					    NB_PIECES_DISPO[i] = NB_PIECES_DISPO[i] - 1;
 					    j++;
 					} else {
@@ -219,7 +229,7 @@ void ACHAT_BOISSON_3(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 				}
 				if (j > 0) {
 					if (NB_PIECES_DISPO[i] > 0) {
-					    printf("%d x %.2lf\n", j, MONNAIE_DISPO[i]);
+						printf("%d x %.2lf\n", j, MONNAIE_DISPO[i]);
 					}
 				}
 				j = 0;
@@ -228,6 +238,7 @@ void ACHAT_BOISSON_3(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 			LAUNCH_PROGRESS_BAR();
 			demande++;
 		    printf("Votre boisson est prête !!!\n");
+			printf("Patientez 3 secondes avant de recommander...\n");
 		} else {
 			if (Choix == 10) {
 				printf("A BIENTOT POUR DE NOUVEAUX ACHAT CLIENT FIDELE !!!\n");
@@ -240,21 +251,22 @@ void ACHAT_BOISSON_3(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 }
 
 void REMP_NOMS_BOISSONS(char BOISSONS[][20], int Choix) {
-	printf("Votre '%s' est prête !!!\n", BOISSONS[Choix]);
+	printf("Votre '%s' est prêt !!!\n", BOISSONS[Choix]);
+	printf("Patientez 3 secondes avant de recommander...\n");
 }
 
-void ACHAT_BOISSON_4(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_BOISSONS[], char BOISSONS[][20], int Choix, double Somme) {
+void ACHAT_BOISSON_FINALE(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_BOISSONS[], char BOISSONS[][20], int Choix, double Somme) {
 	int demande = 0;
 	while (Choix != 10) {
-		sleep(2);
 		int i = 0;
 		int j = 0;
 		double renduMonnaie;
 		double monnaiePrefere;
 		int nbRendedMoney[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		if (demande >= 1) {
+			sleep(3);
 			system("clear");
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(4);
 		}
 		printf("Quel est votre choix (tapez '10' pour quitter) ?\n");
 	    scanf("%d", &Choix);
@@ -270,7 +282,7 @@ void ACHAT_BOISSON_4(double MONNAIE_DISPO[], int NB_PIECES_DISPO[], double PRIX_
 			}
 	        printf("La monnaie à rendre est de : %.2lf\n", renduMonnaie);
 			while (i < 10) {
-				while (renduMonnaie > MONNAIE_DISPO[i] || fabs(renduMonnaie - MONNAIE_DISPO[i]) < 0.001) {
+				while (renduMonnaie > MONNAIE_DISPO[i] && MONNAIE_DISPO[i] <= monnaiePrefere || fabs(renduMonnaie - MONNAIE_DISPO[i]) < 0.001 && MONNAIE_DISPO[i] <= monnaiePrefere) {
 					if (NB_PIECES_DISPO[i] > 0) {
 					    renduMonnaie = renduMonnaie - MONNAIE_DISPO[i];
 					    NB_PIECES_DISPO[i] = NB_PIECES_DISPO[i] - 1;
@@ -337,23 +349,23 @@ int main(int argc, char** argv) {
     system("clear");
     switch (partieTP) {
         case 1:
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(partieTP);
 			ACHAT_BOISSON(MONNAIE_DISPO, PRIX_BOISSONS, Choix, Somme);
         break;
 		
         case 2:
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(partieTP);
 			ACHAT_BOISSON_2(MONNAIE_DISPO, NB_PIECES_DISPO, PRIX_BOISSONS, Choix, Somme);
         break;
 		
 		case 3:
-			AFFICHAGE_BOISSONS();
+			AFFICHAGE_BOISSONS(partieTP);
 			ACHAT_BOISSON_3(MONNAIE_DISPO, NB_PIECES_DISPO, PRIX_BOISSONS, Choix, Somme);
         break;
 		    
         case 4:
-			AFFICHAGE_BOISSONS();
-			ACHAT_BOISSON_4(MONNAIE_DISPO, NB_PIECES_DISPO, PRIX_BOISSONS, BOISSONS, Choix, Somme);
+			AFFICHAGE_BOISSONS(partieTP);
+			ACHAT_BOISSON_FINALE(MONNAIE_DISPO, NB_PIECES_DISPO, PRIX_BOISSONS, BOISSONS, Choix, Somme);
         break;
     }
     return 0;
